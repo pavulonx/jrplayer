@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="medium_text_size">20sp</dimen>
+    <dimen name="medium_margin">15dp</dimen>
+    <dimen name="medium_big_margin">25dp</dimen>
+    <dimen name="big_text_size">30sp</dimen>
+
+    <dimen name="list_floating_button_margin">16dp</dimen>
+    <dimen name="list_poster_size">64dp</dimen>
+    <dimen name="list_row_horizontal_padding">11dp</dimen>
+    <dimen name="list_row_vertical_padding_bottom">5dp</dimen>
+    <dimen name="list_row_vertical_padding_top">10dp</dimen>
+    <dimen name="list_heard_background_padding">20dp</dimen>
+    <dimen name="list_heard_background_radius">10dp</dimen>
+    <dimen name="list_heard_margin_top">35dp</dimen>
+    <dimen name="list_heard_size">40dp</dimen>
+    <dimen name="list_standard_spacing">10dp</dimen>
+    <dimen name="list_title_size">16sp</dimen>
+    <dimen name="list_heard_padding">5dp</dimen>
+    <dimen name="list_odd_poster_end">15dp</dimen>
+    <dimen name="margin_cover">15dp</dimen>
+
+</resources>

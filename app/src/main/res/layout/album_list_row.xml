@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentEven"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/list_row_vertical_padding_bottom"
+    android:paddingLeft="@dimen/list_row_horizontal_padding"
+    android:paddingRight="@dimen/list_row_horizontal_padding"
+    android:paddingTop="@dimen/list_row_vertical_padding_top">
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/posterBackgroundEven"-->
+    <!--android:layout_width="@dimen/list_poster_size"-->
+    <!--android:layout_height="@dimen/list_poster_size"-->
+    <!--android:layout_marginEnd="@dimen/list_standard_spacing" />-->
+
+    <ImageView
+        android:id="@+id/poster"
+        android:layout_width="@dimen/list_poster_size"
+        android:layout_height="@dimen/list_poster_size"
+        android:layout_marginEnd="@dimen/margin_cover"/>
+
+    <TextView
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/list_standard_spacing"
+        android:layout_marginStart="@dimen/list_standard_spacing"
+        android:layout_marginTop="@dimen/list_standard_spacing"
+        android:textColor="@color/year" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/year"
+        android:layout_toEndOf="@id/poster"
+        android:layout_toStartOf="@id/year"
+        android:textColor="@color/title"
+        android:textSize="@dimen/list_title_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:text="todelete"
+        android:layout_marginEnd="@dimen/list_standard_spacing"
+        android:layout_toEndOf="@id/poster" />
+
+    <TextView
+        android:id="@+id/album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/artist"
+        android:layout_marginEnd="@dimen/list_standard_spacing"
+        android:layout_toEndOf="@id/poster" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/heardIconEven"-->
+        <!--android:layout_width="@dimen/list_heard_size"-->
+        <!--android:layout_height="@dimen/list_heard_size"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignTop="@+id/posterEven"-->
+        <!--android:layout_marginTop="@dimen/list_heard_margin_top"-->
+        <!--android:padding="@dimen/list_heard_padding"-->
+        <!--android:src="@drawable/ic_album_heard_layer" />-->
+
+</RelativeLayout>
