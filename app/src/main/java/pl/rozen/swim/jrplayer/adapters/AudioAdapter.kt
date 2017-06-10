@@ -36,6 +36,8 @@ class AudioAdapter(private val albumsList: MutableList<Audio>,
 
         fun bindViews(audio: Audio, poster: ImageView, title: TextView, artist: TextView, album: TextView) = with(audio) {
             poster.imageResource = coverID
+            // TODO("Add proper images")
+
             artist.text = this.artist
             title.text = this.title
             album.text = this.album
