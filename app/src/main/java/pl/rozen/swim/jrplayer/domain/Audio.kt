@@ -15,6 +15,6 @@ class Audio(val data: String = "",
 
     companion object {
         val UNDEFINED_POSTER_IMAGE: Int = R.drawable.undefined_album_poster
-        val UNDEFINED_ALBUM_IMAGE: Int = R.drawable.undefined_album_image
+        @DrawableRes val UNDEFINED_AUDIO_IMAGE: Int = R.drawable.undefined_audio_image
     }
 }

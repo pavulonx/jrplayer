@@ -2,6 +2,7 @@ package pl.rozen.swim.jrplayer.activities
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.media.MediaMetadataRetriever
 import android.os.Build
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
@@ -14,6 +15,7 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.jetbrains.anko.startActivity
@@ -26,7 +28,7 @@ import java.util.ArrayList
 class MainActivity : AppCompatActivity() {
 
     lateinit var adapter: AudioAdapter
-    lateinit private var audioList: MutableList<Audio> //= loadAudioList() //DatabaseHelper.ALBUMS_LIST
+    lateinit private var audioList: MutableList<Audio>
     val REQUEST_ID_MULTIPLE_PERMISSIONS = 1
 
     fun loadAudioList(): MutableList<Audio> {
@@ -46,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     val title = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))
                     val album = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM))
                     val artist = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))
-
+//                    val albumArtPath = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.AlbumColumns.ALBUM_ART))
                     // Save to audioList
                     audioList.add(Audio(data, title, album, artist))
                 }
@@ -84,7 +86,7 @@ class MainActivity : AppCompatActivity() {
         audioList = loadAudioList()
 
         adapter = AudioAdapter(audioList, { it: Audio ->
-            startActivity<AudioDetailActivity>(AudioDetailActivity.ALBUM_INDEX.to(audioList.indexOf(it)))
+            startActivity<AudioDetailActivity>(AudioDetailActivity.ALBUM_GSON.to(Gson().toJson(it)))
         })
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = mLayoutManager
@@ -94,18 +96,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView.addItemDecoration(dividerItemDecoration)
 
         recyclerView.adapter = adapter
-
-
-//        val simpleItemTouchCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
-//            override fun onMove(recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder?, target: RecyclerView.ViewHolder?) = false
-//
-//            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-//                adapter.remove(viewHolder, recyclerView)
-//            }
-//        }
-
-//        val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
-//        itemTouchHelper.attachToRecyclerView(recyclerView)
 
         adapter.notifyDataSetChanged()
 
