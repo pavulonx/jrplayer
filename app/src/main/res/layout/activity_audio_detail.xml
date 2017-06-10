@@ -47,7 +47,7 @@
         android:src="@android:drawable/ic_media_play" />
 
     <ImageButton
-        android:id="@+id/audio_detail_reverse_ib"
+        android:id="@+id/audio_detail_backward_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/audio_detail_play_pause_ib"

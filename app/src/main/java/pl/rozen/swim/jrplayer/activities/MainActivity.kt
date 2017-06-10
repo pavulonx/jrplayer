@@ -2,7 +2,6 @@ package pl.rozen.swim.jrplayer.activities
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.media.MediaMetadataRetriever
 import android.os.Build
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
@@ -48,8 +47,6 @@ class MainActivity : AppCompatActivity() {
                     val title = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))
                     val album = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM))
                     val artist = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))
-//                    val albumArtPath = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.AlbumColumns.ALBUM_ART))
-                    // Save to audioList
                     audioList.add(Audio(data, title, album, artist))
                 }
             }

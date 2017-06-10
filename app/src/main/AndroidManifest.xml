@@ -32,7 +32,7 @@
             android:name="pl.rozen.swim.jrplayer.activities.AudioDetailActivity"
             android:label="@string/audio_activity_label"
             android:parentActivityName="pl.rozen.swim.jrplayer.activities.MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--<service android:name="pl.rozen.swim.jrplayer.services.MusicService" />-->
 
     </application>
